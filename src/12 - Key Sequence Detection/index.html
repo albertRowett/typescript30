@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Key Detection</title>
+        <!-- <script defer type="module" src="../../build/12 - Key Sequence Detection/script.js"></script> -->
+        <script defer type="text/javascript" src="./cornify.js"></script>
+        <link rel="icon" href="https://fav.farm/🔥" />
+    </head>
+
+    <body>
+        <script>
+            const pressed = [];
+            const secretCode = 'cornify';
+            const secretCodeLength = secretCode.length;
+
+            window.addEventListener('keyup', e => {
+                pressed.push(e.key);
+                pressed.splice(-secretCodeLength - 1, pressed.length - secretCodeLength);
+                if (pressed.join('').includes(secretCode)) {
+                    cornify_add();
+                }
+            });
+        </script>
+    </body>
+</html>
